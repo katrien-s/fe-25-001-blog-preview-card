@@ -45,6 +45,7 @@ body {
 	font-weight: var(--fw-500);
 	font-size: var(--fs-400);
 	color: hsl(var(--clr-neutral-500));
+	background-color: hsl(var(--clr-accent-400));
 	line-height: 1.5;
 	min-height: 100vh;
 	display: grid;
@@ -53,14 +54,25 @@ body {
 }
 
 /* Utility classes */
-.flow-content > * + * {
-	margin-top: var(--flow-space, var(--spacer));
+.flow > *:where(:not(:first-child)) {
+	margin-top: var(--flow-space, 3.5rem);
+}
+
+.flow-space-big {
+	--flow-space: 5rem;
+}
+
+.flow-space-normal {
+	--flow-space: 3.5rem;
+}
+
+.flow-space-small {
+	--flow-space: 1.5rem;
 }
 
 .wrapper {
 	padding: 0 var(--spacer);
 	max-width: 70rem;
-	margin: 0 auto;
 }
 
 header {
@@ -88,22 +100,6 @@ header {
 	display: grid;
 	grid-template-columns: repeat(2, 40px);
 	gap: var(--gap, 1rem);
-}
-
-.flow > *:where(:not(:first-child)) {
-	margin-top: var(--flow-space, 3.5rem);
-}
-
-.flow-space-big {
-	--flow-space: 5rem;
-}
-
-.flow-space-normal {
-	--flow-space: 3.5rem;
-}
-
-.flow-space-small {
-	--flow-space: 1.5rem;
 }
 
 .underline {
@@ -233,6 +229,45 @@ h3,
 
 .spacing-block__small {
 	--width: 4px;
+}
+
+/* Component */
+
+.card {
+	--flow-space: 1rem;
+	width: min(calc(100vw - 2rem), 24rem);
+	border: 1px solid hsl(var(--clr-neutral-950));
+	background-color: hsl(var(--clr-neutral-100));
+	border-radius: 20px;
+	padding: 1.5rem;
+	box-shadow: 5px 5px hsl(var(--clr-neutral-950));
+}
+
+.illustration {
+	border-radius: 10px;
+	max-width: 100%;
+}
+
+.card-tag {
+	display: inline-block;
+	color: hsl(var(--clr-neutral-950));
+	font-weight: var(--fw-800);
+	font-size: var(--fs-300);
+	background-color: hsl(var(--clr-accent-400));
+	border-radius: 4px;
+	padding: 0.25rem 0.75rem;
+}
+
+.teacher-info {
+	--flow-space: 1.5rem;
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+.avatar {
+	width: 32px;
+	height: 32px;
 }
 
 /* Footer */
